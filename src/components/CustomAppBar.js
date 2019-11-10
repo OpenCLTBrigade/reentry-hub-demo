@@ -19,7 +19,7 @@ export default function CustomAppBar(props) {
               <ButtonGroup color='inherit' variant='text' size='large'>
                 <Button href='/'>Home</Button>
                 <Button href='/roadmap'>Road Map</Button>
-                <Button href='/about'>About</Button>
+                <Button href='/the-project'>The Project</Button>
               </ButtonGroup>
             </Hidden>
           </Grid>

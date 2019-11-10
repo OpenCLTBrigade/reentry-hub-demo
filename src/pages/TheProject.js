@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography, Grid, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-export default function About(props) {
+export default function TheProject(props) {
   return (
     <Grid
       container
