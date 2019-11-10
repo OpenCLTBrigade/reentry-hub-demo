@@ -13,7 +13,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CustomAppBar />
       <Switch>
-        <Route path='/' component={Home} />
+        <Route exact path='/' component={Home} />
         <Route path='/roadmap' component={RoadMap} />
         <Route path='/the-project' component={TheProject} />
         <Route path='/impact-cascade' component={ImpactCascade} />
