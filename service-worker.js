@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/reentry-hub-demo/precache-manifest.b8d5f3db62e6ebaef0c33acd4f8b47ea.js"
+  "/reentry-hub-demo/precache-manifest.503a996871582b5b5c5af49e6a0a5695.js"
 );
 
 self.addEventListener('message', (event) => {
