@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Typography, Grid, Button } from '@material-ui/core';
 
 export default function TheProject(props) {
@@ -16,12 +17,12 @@ export default function TheProject(props) {
       </Grid>
 
       <Grid item>
-        <Button color='secondary' variant='outlined' size='large' href='/roadmap'>
+        <Button color='secondary' variant='outlined' size='large' component={Link} to='/roadmap'>
           Start your Road Map
         </Button>
       </Grid>
       <Grid item>
-        <Button color='secondary' variant='outlined' size='large' href='/the-project'>
+        <Button color='secondary' variant='outlined' size='large' component={Link} to='/the-project'>
           Learn about the project
         </Button>
       </Grid>

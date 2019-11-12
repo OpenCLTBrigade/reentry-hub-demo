@@ -39,7 +39,7 @@ export function checkForLinks(string) {
           let url = chunk.match(/\(.*\)/g)[0].slice(1, -1);
           let label = chunk.match(/\[.*\]/g)[0].slice(1, -1);
           
-          return <Link key={label} target='_blank' href={url}>{label}</Link>
+          return <Link key={label} target='_blank' to={url}>{label}</Link>
         })
 
         return stringMatch;

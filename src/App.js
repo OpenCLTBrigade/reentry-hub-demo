@@ -12,16 +12,18 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <ThemeProvider theme={theme}>
-        <CustomAppBar />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/roadmap' component={RoadMap} />
-          <Route path='/the-project' component={TheProject} />
-          <Route path='/impact-cascade' component={ImpactCascade} />
-        </Switch>
-        <Footer />
-      </ThemeProvider>
+      <React.Fragment>
+        <ThemeProvider theme={theme}>
+          <CustomAppBar />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/roadmap' component={RoadMap} />
+            <Route exact path='/the-project' component={TheProject} />
+            <Route exact path='/impact-cascade' component={ImpactCascade} />
+          </Switch>
+          <Footer />
+        </ThemeProvider>
+      </React.Fragment>
     </Router>
   );
 }
