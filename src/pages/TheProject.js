@@ -1,20 +1,8 @@
 import React from 'react';
 import { Typography, Grid, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { makeStyles } from '@material-ui/styles';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    padding: theme.spacing(4)
-  },
-  subtitle: {
-    width: theme.spacing(75)
-  }
-}))
 
 export default function TheProject(props) {
-  const classes = useStyles();
-
   return (
     <Grid
       container
@@ -22,19 +10,19 @@ export default function TheProject(props) {
       justify='center'
       alignItems='center'
       spacing={2}
-      className={classes.root}
+      style={{ padding: '2em' }}
     >
       <Grid item>
         <Typography color='primary' variant='h2' gutterBottom>The Project</Typography>
       </Grid>
 
       <Grid item>
-        <Typography paragraph component='p' variant='subtitle1' className={classes.subtitle}>
+        <Typography paragraph variant='subtitle1'>
           Welcome to our project page. We’re so excited that you’re interested in helping us create this project. To start you off, we will tell you why we believe this project is so important, some history, our impact goals and how to get involved.
           </Typography>
       </Grid>
 
-      <Grid item>
+      <Grid item style={{ width: '100%' }}>
         <ExpansionPanel>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}

@@ -13,11 +13,11 @@ export default function TheProject(props) {
       style={{ padding: '2em' }}
     >
       <Grid item>
-        <Typography variant='h2' gutterBottom>Our Impact Cascade</Typography>
+        <Typography color='primary' variant='h2' gutterBottom>Our Impact Cascade</Typography>
       </Grid>
 
       <Grid item>
-        <Typography paragraph>
+        <Typography paragraph variant='subtitle1'>
           To ensure that we are creating a tool that has the desired impact, we have created milestones and metrics through the entire process. Milestones and metrics can (and often do) change as we are moving through the project. We are always changing and re-iterating based on user research and feedback. As it stands, here is our Impact Cascade for this project:
         </Typography>
       </Grid>
@@ -28,7 +28,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>During the project research</Typography>
+            <Typography variant='h5'>During the project research</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -46,7 +46,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>During the user testing</Typography>
+            <Typography variant='h5'>During the user testing</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -61,7 +61,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>While the tool is being used by users</Typography>
+            <Typography variant='h5'>While the tool is being used by users</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -75,7 +75,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>The intended beneficiary impact</Typography>
+            <Typography variant='h5'>The intended beneficiary impact</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -90,7 +90,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>The intended systemic impact</Typography>
+            <Typography variant='h5'>The intended systemic impact</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
