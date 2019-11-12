@@ -20,8 +20,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: theme.spacing(43)
   },
   formTitle: {
-    maxWidth: theme.spacing(43),
-    textShadow: `-1px 1px ${theme.palette.primary.dark}`
+    maxWidth: theme.spacing(43)
   }
 }));
 
