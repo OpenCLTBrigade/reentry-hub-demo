@@ -175,7 +175,7 @@ export default function RadioButtonsGroup() {
         >
           <WizardButton variant='contained' color='secondary' mode='previous' buttonLabel='Back' />
           <WizardButton variant='contained' color='primary' mode='next' buttonLabel='Next' />
-          <WizardButton variant='contained' color='primary' mode='submit' buttonLabel='Submit' />
+          <WizardButton variant='contained' color='primary' mode='submit' buttonLabel='Generate Roadmap' />
         </Grid>
 
         {/* margin under buttons to prevent them from being clipped by hidden overflow */}
