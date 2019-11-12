@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper, Typography } from '@material-ui/core';
 import WizardSwitcher from '../../components/WizardComponents/WizardSwitcher';
@@ -7,6 +7,7 @@ import WizardPage from '../../components/WizardComponents/WizardPage';
 import WizardSlide from '../../components/WizardComponents/WizardSlide';
 import WizardField from '../../components/WizardComponents/WizardField';
 import WizardButton from '../../components/WizardComponents/WizardButton';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import { questionData } from './questionsData';
 
 const useStyles = makeStyles(theme => ({
@@ -27,9 +28,24 @@ const useStyles = makeStyles(theme => ({
 
 export default function RadioButtonsGroup() {
   const classes = useStyles();
+  const [ redirect, setRedirect ] = useState(false);
+
+  if (redirect) {
+    return (
+      <Grid container justify='center' alignItems='center' style={{ marginTop: '2em' }}>
+        <Grid item>
+          <Typography variant='h3' color='primary' className={classes.formTitle}>Yay you've finished! <ThumbUpIcon color='primary'/></Typography>
+        </Grid>
+      </Grid>
+    )
+  }
 
   return (
-    <WizardSwitcher>
+    <WizardSwitcher
+      submit={() => {
+        setTimeout(() => setRedirect(true), 2000)
+      }}
+    >
       <Grid
         container
         justify='center'
@@ -46,11 +62,11 @@ export default function RadioButtonsGroup() {
                 <Grid container direction='row' alignContent='center' justify='center' spacing={5}>
                   <Grid item container direction='column' alignContent='center' justify='center' spacing={1} xs={6}>
                     <Grid item>
-                      {page.pageTitle && <Typography variant='h3' color='primary' gutterBottom className={classes.formTitle}>{page.pageTitle}</Typography>}
+                      {page.pageTitle && <Typography variant='h3' color='primary' className={classes.formTitle}>{page.pageTitle}</Typography>}
                     </Grid>
                     {page.pageDescription.map((text, i) => (
                       <Grid item key={`description-grid-${i}`}>
-                        <Typography key={`description-text-${i}`} variant='subtitle2' paragraph className={classes.formDescription}>{text}</Typography>
+                        <Typography key={`description-text-${i}`} variant='subtitle2' className={classes.formDescription}>{text}</Typography>
                       </Grid>
                     ))}
                   </Grid>
