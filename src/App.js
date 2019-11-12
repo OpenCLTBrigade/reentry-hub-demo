@@ -4,7 +4,7 @@ import { theme } from './theme';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import CustomAppBar from './components/CustomAppBar';
 import TheProject from './pages/TheProject';
-import RoadMap from './pages/RoadMap';
+import RoadMap from './pages/RoadMap/RoadMap';
 import ImpactCascade from './pages/impactcascade';
 import Home from './pages/home'
 import Footer from './components/Footer';
