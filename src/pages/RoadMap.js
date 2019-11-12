@@ -1,74 +1,180 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-import { Grid, Collapse } from '@material-ui/core';
+import { Grid, Paper, Typography } from '@material-ui/core';
+import WizardSwitcher from '../components/WizardComponents/WizardSwitcher';
+import WizardProgress from '../components/WizardComponents/WizardProgress';
+import WizardPage from '../components/WizardComponents/WizardPage';
+import WizardSlide from '../components/WizardComponents/WizardSlide';
+import WizardField from '../components/WizardComponents/WizardField';
+import WizardButton from '../components/WizardComponents/WizardButton';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(3),
   },
+  formPaper: {
+    padding: theme.spacing(2),
+    maxWidth: theme.spacing(43)
+  }
 }));
+
+const questionData = [
+  {
+    pageId: 1, // Must include pageId. Can either be a string or integer
+    pageTitle: 'Employment', // Optional title
+    pageDescription: 'Here is an example of descriptive text', // Optional subtitle
+    fields: [ // At least one field per page is required. Multiple fields are supported.
+      {
+        label: 'Do you need employment?', // A label for the field, basically the question you're asking
+        name: 'needEmployment', // Needs a unique, descriptive name. Camel case preferred.
+        fieldType: 'radio', // Type of field. Options are: text, checkbox, radio, and dropdown.
+        options: [ // If using dropdown, radio, or checkbox, options must be supplied.
+          'Yes',
+          'No'
+        ]
+      }
+    ]
+  },
+  {
+    pageId: 2,
+    pageTitle: 'Employment',
+    fields: [
+      {
+        label: 'Do you have a diploma or GED certificate?',
+        name: 'diplomaOrGED',
+        fieldType: 'radio',
+        options: [
+          'Yes',
+          'No'
+        ]
+      }
+    ]
+  },
+  {
+    pageId: 3,
+    pageTitle: 'Example of a dropdown question',
+    fields: [
+      {
+        label: 'Please choose a color',
+        name: 'color',
+        fieldType: 'dropdown',
+        variant: 'outlined',
+        options: [
+          'Red',
+          'Orange',
+          'Yellow',
+          'Green',
+          'Blue',
+          'Indigo',
+          'Violet'
+        ]
+      }
+    ]
+  },
+  {
+    pageId: 4,
+    pageTitle: 'Example of a text question',
+    fields: [
+      {
+        label: 'Please enter your SSN',
+        name: 'ssn',
+        fieldType: 'text',
+        variant: 'outlined', // TextField props can be supplied. Supported props: variant, fullWidth, autoFocus, and type.
+        fullWidth: true
+      }
+    ]
+  },
+  {
+    pageId: 5,
+    pageTitle: 'Example of a checkbox question',
+    fields: [
+      {
+        label: 'Please pick one',
+        name: 'color',
+        fieldType: 'checkbox',
+        options: [
+          'Cats',
+          'Dogs',
+          'Ferrets'
+        ]
+      }
+    ]
+  },
+]
 
 export default function RadioButtonsGroup() {
   const classes = useStyles();
-  const [value, setValue] = React.useState({
-    likeKittens: 'No',
-    seeKittens: 'No'
-  });
 
-  const handleChange = name => event => {
-    setValue({...value, [name]: event.target.value });
-  };
-
-  const { likeKittens, seeKittens } = value;
   return (
-    <Grid
-      container
-      direction='column'
-      justify='center'
-      alignItems='center'
-      spacing={2}
-      style={{ padding: '2em' }}
-    >
-      <Grid item>
-        <FormControl component="fieldset" className={classes.formControl}>
-          <FormLabel component="legend">Do you like kittens?</FormLabel>
-          <RadioGroup name="likeKittens" value={likeKittens} onChange={handleChange('likeKittens')}>
-            <Grid container direction='row'>
-              <Grid item>
-                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
-              </Grid>
-              <Grid item>
-                <FormControlLabel value="No" control={<Radio />} label="No" />
-              </Grid>
-            </Grid>
-          </RadioGroup>
-        </FormControl>
-        <Collapse in={likeKittens === 'Yes' ? true : false}>
-
-          <FormControl component="fieldset" className={classes.formControl}>
-            <FormLabel component="legend">Do want to see kittens?</FormLabel>
-            <RadioGroup name="seeKittens" value={seeKittens} onChange={handleChange('seeKittens')}>
-              <Grid container direction='row'>
+    <WizardSwitcher>
+      <Grid
+        container
+        justify='center'
+        alignItems='center'
+        direction='column'
+      >
+        <Grid item style={{ width: '100%', marginBottom: '4vh' }}>
+          <WizardProgress />
+        </Grid>
+        <Grid item>
+          {questionData.map((page, index) => (
+            <WizardPage pageId={page.pageId} key={`page-${index}`}>
+              <Grid container direction='column' alignContent='center' justify='center'>
                 <Grid item>
-                  <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                  {page.pageTitle && <Typography variant='h3' color='primary' gutterBottom>{page.pageTitle}</Typography>}
+                  {page.pageDescription && <Typography variant='subtitle2' paragraph>{page.pageDescription}</Typography>}
                 </Grid>
                 <Grid item>
-                  <FormControlLabel value="No" control={<Radio />} label="No" />
+                  <WizardSlide>
+                    <Paper elevation={5} className={classes.formPaper}>
+                      {page.fields.map((question) => (
+                        <WizardField
+                          key={`${page.formId}-${question.name}`}
+                          questionLabel={question.label}
+                          name={question.name}
+                          fieldType={question.fieldType}
+                          finePrint={question.finePrint}
+                          paymentDetails={question.paymentDetails}
+                          TextFieldProps={{
+                            variant: question.variant,
+                            fullWidth: question.fullWidth,
+                            autoFocus: question.autoFocus,
+                            type: question.type,
+                          }}
+                          TypographyProps={{
+                            variant: 'h6',
+                            gutterBottom: true
+                          }}
+                          options={question.options}
+                          subscribedFields={question.subscribedFields}
+                        />
+                      ))}
+                    </Paper>
+                  </WizardSlide>
                 </Grid>
               </Grid>
-            </RadioGroup>
-          </FormControl>
-          <Collapse in={seeKittens === 'Yes' ? true : false}>
-            <img alt='kitten placeholder' src='https://placekitten.com/500/500' />
-          </Collapse>
+            </WizardPage>
+          ))}
+        </Grid>
 
-        </Collapse>
+        <div style={{ margin: '2vh' }} />
+
+        <Grid
+          item
+          container
+          direction='row'
+          justify='center'
+          alignItems='center'
+          spacing={2}
+        >
+          <WizardButton variant='contained' color='secondary' mode='previous' buttonLabel='Back' />
+          <WizardButton variant='contained' color='primary' mode='next' buttonLabel='Next' />
+          <WizardButton variant='contained' color='primary' mode='submit' buttonLabel='Submit' />
+        </Grid>
+
+        {/* margin under buttons to prevent them from being clipped by hidden overflow */}
+        <div style={{ margin: '2vh' }} />
       </Grid>
-    </Grid>
+    </WizardSwitcher>
   );
 }
