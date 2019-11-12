@@ -15,6 +15,12 @@ const useStyles = makeStyles(theme => ({
   formPaper: {
     padding: theme.spacing(2),
     maxWidth: theme.spacing(43)
+  },
+  formDescription: {
+    maxWidth: theme.spacing(43)
+  },
+  formTitle: {
+    maxWidth: theme.spacing(43)
   }
 }));
 
@@ -22,7 +28,7 @@ const questionData = [
   {
     pageId: 1, // Must include pageId. Can either be a string or integer
     pageTitle: 'Employment', // Optional title
-    pageDescription: 'Here is an example of descriptive text', // Optional subtitle
+    pageDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut luctus ante. Aliquam nec scelerisque lectus. Ut molestie dolor et euismod rhoncus. In erat nunc, accumsan nec rutrum eleifend, maximus quis massa. Nunc urna ipsum, faucibus vitae tincidunt nec, volutpat nec lectus. Aliquam tellus lacus, rhoncus quis sem at, luctus porta nibh. Vivamus ut mauris vel mi tempus commodo. Suspendisse rhoncus tincidunt ipsum, sit amet laoreet nisi tempor a. Praesent efficitur, orci eu sollicitudin suscipit, tortor diam imperdiet turpis, non posuere metus massa sit amet diam.', // Optional subtitle
     fields: [ // At least one field per page is required. Multiple fields are supported.
       {
         label: 'Do you need employment?', // A label for the field, basically the question you're asking
@@ -121,8 +127,8 @@ export default function RadioButtonsGroup() {
             <WizardPage pageId={page.pageId} key={`page-${index}`}>
               <Grid container direction='column' alignContent='center' justify='center'>
                 <Grid item>
-                  {page.pageTitle && <Typography variant='h3' color='primary' gutterBottom>{page.pageTitle}</Typography>}
-                  {page.pageDescription && <Typography variant='subtitle2' paragraph>{page.pageDescription}</Typography>}
+                  {page.pageTitle && <Typography variant='h3' color='primary' gutterBottom className={classes.formTitle}>{page.pageTitle}</Typography>}
+                  {page.pageDescription && <Typography variant='subtitle2' paragraph className={classes.formDescription}>{page.pageDescription}</Typography>}
                 </Grid>
                 <Grid item>
                   <WizardSlide>
@@ -169,7 +175,7 @@ export default function RadioButtonsGroup() {
         >
           <WizardButton variant='contained' color='secondary' mode='previous' buttonLabel='Back' />
           <WizardButton variant='contained' color='primary' mode='next' buttonLabel='Next' />
-          <WizardButton variant='contained' color='primary' mode='submit' buttonLabel='Submit' />
+          <WizardButton variant='contained' color='primary' mode='submit' buttonLabel='Generate Roadmap' />
         </Grid>
 
         {/* margin under buttons to prevent them from being clipped by hidden overflow */}

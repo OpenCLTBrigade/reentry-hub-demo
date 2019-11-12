@@ -13,22 +13,21 @@ export default function TheProject(props) {
       style={{ padding: '2em' }}
     >
       <Grid item>
-        <Typography variant='h2' gutterBottom>The Project</Typography>
+        <Typography color='primary' variant='h2' gutterBottom>The Project</Typography>
       </Grid>
 
       <Grid item>
-        <Typography paragraph>
+        <Typography paragraph variant='subtitle1'>
           Welcome to our project page. We’re so excited that you’re interested in helping us create this project. To start you off, we will tell you why we believe this project is so important, some history, our impact goals and how to get involved.
           </Typography>
       </Grid>
 
       <Grid item style={{ width: '100%' }}>
-
         <ExpansionPanel>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>Why is this project important?</Typography>
+            <Typography variant='h5'>Why is this project important?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -48,7 +47,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>Where did this project come from?</Typography>
+            <Typography variant='h5'>Where did this project come from?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -64,7 +63,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>What are the impact goals of the project?</Typography>
+            <Typography variant='h5'>What are the impact goals of the project?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -82,7 +81,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>What scale are we hoping for this project?</Typography>
+            <Typography variant='h5'>What scale are we hoping for this project?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -100,7 +99,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>How do I get involved?</Typography>
+            <Typography variant='h5'>How do I get involved?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
