@@ -7,6 +7,7 @@ import TheProject from './pages/TheProject';
 import RoadMap from './pages/RoadMap';
 import ImpactCascade from './pages/impactcascade';
 import Home from './pages/home'
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/the-project' component={TheProject} />
         <Route path='/impact-cascade' component={ImpactCascade} />
       </Switch>
+      <Footer />
     </ThemeProvider>
   );
 }
