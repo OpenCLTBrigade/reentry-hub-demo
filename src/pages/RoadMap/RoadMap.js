@@ -42,13 +42,19 @@ export default function RadioButtonsGroup() {
         <Grid item>
           {questionData.map((page, index) => (
             <WizardPage pageId={page.pageId} key={`page-${index}`}>
-                  <WizardSlide>
-              <Grid container direction='row' alignContent='center' justify='center' spacing={5}>
-                <Grid item>
-                  {page.pageTitle && <Typography variant='h3' color='primary' gutterBottom className={classes.formTitle}>{page.pageTitle}</Typography>}
-                  {page.pageDescription && <Typography variant='subtitle2' paragraph className={classes.formDescription}>{page.pageDescription}</Typography>}
-                </Grid>
-                <Grid item>
+              <WizardSlide>
+                <Grid container direction='row' alignContent='center' justify='center' spacing={5}>
+                  <Grid item container direction='column' alignContent='center' justify='center' spacing={1} xs={6}>
+                    <Grid item>
+                      {page.pageTitle && <Typography variant='h3' color='primary' gutterBottom className={classes.formTitle}>{page.pageTitle}</Typography>}
+                    </Grid>
+                    {page.pageDescription.map((text, i) => (
+                      <Grid item key={`description-grid-${i}`}>
+                        <Typography key={`description-text-${i}`} variant='subtitle2' paragraph className={classes.formDescription}>{text}</Typography>
+                      </Grid>
+                    ))}
+                  </Grid>
+                  <Grid item xs={6}>
                     <Paper elevation={5} className={classes.formPaper}>
                       {page.fields.map((question) => (
                         <WizardField
@@ -73,9 +79,9 @@ export default function RadioButtonsGroup() {
                         />
                       ))}
                     </Paper>
+                  </Grid>
                 </Grid>
-              </Grid>
-                  </WizardSlide>
+              </WizardSlide>
             </WizardPage>
           ))}
         </Grid>

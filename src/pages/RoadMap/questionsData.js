@@ -2,7 +2,9 @@ export const questionData = [
   {
     pageId: 1, // Must include pageId. Can either be a string or integer
     pageTitle: 'Welcome Home', // Optional title
-    pageDescription: "Welcome home! We're excited but not naïve. We know that leaving prison and re-entry into the community, workplace, and your family is not easy. It can be very frustrating and overwhelming at times. The truth is that a lot of people aren’t successful and end up back in prison. However, we’re hopeful that things can, and will, change for the better. In fact, If we weren’t absolutely convinced of that, we wouldn’t even bother with this tool. We want to help be part of that change by laying  out a helpful process for you to follow, and connect with some wonderful people and resources.", // Optional subtitle
+    pageDescription: [
+      "Welcome home! We're excited but not naïve. We know that leaving prison and re-entry into the community, workplace, and your family is not easy. It can be very frustrating and overwhelming at times. The truth is that a lot of people aren’t successful and end up back in prison.",
+      "However, we’re hopeful that things can, and will, change for the better. In fact, If we weren’t absolutely convinced of that, we wouldn’t even bother with this tool. We want to help be part of that change by laying  out a helpful process for you to follow, and connect with some wonderful people and resources."],
     fields: [ // At least one field per page is required. Multiple fields are supported.
       {
         label: 'Select your county',
@@ -28,40 +30,40 @@ export const questionData = [
   {
     pageId: 2, // Must include pageId. Can either be a string or integer
     pageTitle: 'Basic Information', // Optional title
-    pageDescription: "We hope this is a useful tool for you to prepare your own personal roadmap back home. We're going to ask a few questions to match you up with the resources that you need and help create a roadmap to your success. These questions are not all inclusive and we will ask more in specific sections, as needed.", // Optional subtitle
-    fields: [ // At least one field per page is required. Multiple fields are supported.
-      {
-        label: 'Please enter your first name',
-        name: 'name',
-        fieldType: 'text',
-        variant: 'outlined', // TextField props can be supplied. Supported props: variant, fullWidth, autoFocus, and type.
-        fullWidth: true
-      },
-      {
-        label: 'What is your date of birth?',
-        name: 'dob',
-        fieldType: 'text',
-        variant: 'outlined',
-        fullWidth: true
-      },
-      {
-        label: 'What is your gender?',
-        name: 'gender',
-        fieldType: 'dropdown',
-        variant: 'outlined',
-        options: [
-          'Male',
-          'Female',
-          'Other',
-        ]
-      }
-    ]
+    pageDescription: ["We hope this is a useful tool for you to prepare your own personal roadmap back home. We're going to ask a few questions to match you up with the resources that you need and help create a roadmap to your success. These questions are not all inclusive and we will ask more in specific sections, as needed."], // Optional subtitle
+      fields:[ // At least one field per page is required. Multiple fields are supported.
+        {
+          label: 'Please enter your first name',
+          name: 'name',
+          fieldType: 'text',
+          variant: 'outlined', // TextField props can be supplied. Supported props: variant, fullWidth, autoFocus, and type.
+          fullWidth: true
+        },
+        {
+          label: 'What is your date of birth?',
+          name: 'dob',
+          fieldType: 'text',
+          variant: 'outlined',
+          fullWidth: true
+        },
+        {
+          label: 'What is your gender?',
+          name: 'gender',
+          fieldType: 'dropdown',
+          variant: 'outlined',
+          options: [
+            'Male',
+            'Female',
+            'Other',
+          ]
+        }
+      ]
   },
 
   {
     pageId: 3,
     pageTitle: 'Getting Organized',
-    pageDescription: 'Inspriational TEXT HERE',
+    pageDescription: ['Inspriational TEXT HERE'],
     fields: [
       {
         label: 'Do you have a government-issued ID?',
@@ -150,7 +152,7 @@ export const questionData = [
   {
     pageId: 4,
     pageTitle: 'Getting an ID',
-    pageDescription: 'As you probably know, having an government-issued ID is vital to life and accessing resources.  To minimize necessary time at the DMV let’s make sure you know what you need and how to get an ID or license. <br/><br/> ADD INFO FROM DMV SITE',
+    pageDescription: ['As you probably know, having an government-issued ID is vital to life and accessing resources.  To minimize necessary time at the DMV let’s make sure you know what you need and how to get an ID or license. <br/><br/> ADD INFO FROM DMV SITE'],
     fields: [
     ]
   },
@@ -160,7 +162,7 @@ export const questionData = [
   {
     pageId: 5,
     pageTitle: 'Getting Employment',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Do you have a diploma or GED certificate?',
@@ -219,7 +221,7 @@ export const questionData = [
   {
     pageId: 6,
     pageTitle: 'Getting Housing',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Which is superior?',
@@ -235,7 +237,7 @@ export const questionData = [
   {
     pageId: 7,
     pageTitle: 'Getting Transportation',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Do you use Public Transportation as your primary transportation?',
@@ -252,7 +254,7 @@ export const questionData = [
   {
     pageId: 8,
     pageTitle: 'Getting Food Security',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Which is superior?',
@@ -268,7 +270,7 @@ export const questionData = [
   {
     pageId: 9,
     pageTitle: 'Getting Medical Healthcare',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Do you have private insurance?',
@@ -311,7 +313,7 @@ export const questionData = [
   {
     pageId: 10,
     pageTitle: 'Getting Mental Healthcare',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Which is superior?',
@@ -327,7 +329,7 @@ export const questionData = [
   {
     pageId: 11,
     pageTitle: 'Getting Substance Abuse Treatment',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Which is superior?',
@@ -343,7 +345,7 @@ export const questionData = [
   {
     pageId: 12,
     pageTitle: 'Getting Legal Help',
-    pageDescription: 'One of the most frustrating experiences is to finally get out, start getting your life together, and then get arrested unexpectedly for an old case, warrants, detainers, traffic tickets and fines. Especially, when many of these legal issues can be resolved while you’re still in prison. Some situations may be more complicated and will have to be dealt with after you’re released but it is important to understand what you can take care of before your release. ',
+    pageDescription: ['One of the most frustrating experiences is to finally get out, start getting your life together, and then get arrested unexpectedly for an old case, warrants, detainers, traffic tickets and fines. Especially, when many of these legal issues can be resolved while you’re still in prison. Some situations may be more complicated and will have to be dealt with after you’re released but it is important to understand what you can take care of before your release. '],
     fields: [
       {
         label: 'Do you know of any unresolved legal issues?',
@@ -359,7 +361,7 @@ export const questionData = [
   {
     pageId: 13,
     pageTitle: 'Starting a Business',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Which is superior?',
@@ -375,7 +377,7 @@ export const questionData = [
   {
     pageId: 14,
     pageTitle: 'Getting Financial Literacy',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Which is superior?',
@@ -391,7 +393,7 @@ export const questionData = [
   {
     pageId: 15,
     pageTitle: 'Getting Reunification',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: "Do you have family that you'd like help reunifying with?",
@@ -407,7 +409,7 @@ export const questionData = [
   {
     pageId: 16,
     pageTitle: 'Getting Mentorship',
-    pageDescription: "We’ve heard over and over from returning residents that no one understands quite like someone who’s lived through it. We couldn’t agree more. Mentors with lived experience are so important on your path to a successful return to the community. Therefore, we encourage you to look past your pride or cynicism (easier said than done, we know) and ask for and accept help.",
+    pageDescription: ["We’ve heard over and over from returning residents that no one understands quite like someone who’s lived through it. We couldn’t agree more. Mentors with lived experience are so important on your path to a successful return to the community. Therefore, we encourage you to look past your pride or cynicism (easier said than done, we know) and ask for and accept help."],
     fields: [
       {
         label: 'Would you like to be connected to a mentor?',
@@ -423,7 +425,7 @@ export const questionData = [
   {
     pageId: 17,
     pageTitle: 'Getting an Expungement',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Which is superior?',
@@ -439,7 +441,7 @@ export const questionData = [
   {
     pageId: 18,
     pageTitle: 'Flex Your Advocacy',
-    pageDescription: 'INSERT INSPIRATIONAL INFO HERE',
+    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
     fields: [
       {
         label: 'Which is superior?',
