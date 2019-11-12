@@ -1,8 +1,20 @@
 import React from 'react';
 import { Typography, Grid, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { makeStyles } from '@material-ui/styles';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    padding: theme.spacing(4)
+  },
+  subtitle: {
+    width: theme.spacing(75)
+  }
+}))
 
 export default function TheProject(props) {
+  const classes = useStyles();
+
   return (
     <Grid
       container
@@ -10,25 +22,24 @@ export default function TheProject(props) {
       justify='center'
       alignItems='center'
       spacing={2}
-      style={{ padding: '2em' }}
+      className={classes.root}
     >
       <Grid item>
-        <Typography variant='h2' gutterBottom>The Project</Typography>
+        <Typography color='primary' variant='h2' gutterBottom>The Project</Typography>
       </Grid>
 
       <Grid item>
-        <Typography paragraph>
+        <Typography paragraph component='p' variant='subtitle1' className={classes.subtitle}>
           Welcome to our project page. We’re so excited that you’re interested in helping us create this project. To start you off, we will tell you why we believe this project is so important, some history, our impact goals and how to get involved.
           </Typography>
       </Grid>
 
-      <Grid item style={{ width: '100%' }}>
-
+      <Grid item>
         <ExpansionPanel>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>Why is this project important?</Typography>
+            <Typography variant='h5'>Why is this project important?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -48,7 +59,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>Where did this project come from?</Typography>
+            <Typography variant='h5'>Where did this project come from?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -64,7 +75,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>What are the impact goals of the project?</Typography>
+            <Typography variant='h5'>What are the impact goals of the project?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -82,7 +93,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>What scale are we hoping for this project?</Typography>
+            <Typography variant='h5'>What scale are we hoping for this project?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
@@ -100,7 +111,7 @@ export default function TheProject(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>How do I get involved?</Typography>
+            <Typography variant='h5'>How do I get involved?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography variant='body1' paragraph>
