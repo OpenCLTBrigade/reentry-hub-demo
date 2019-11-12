@@ -15,6 +15,12 @@ const useStyles = makeStyles(theme => ({
   formPaper: {
     padding: theme.spacing(2),
     maxWidth: theme.spacing(43)
+  },
+  formDescription: {
+    maxWidth: theme.spacing(43)
+  },
+  formTitle: {
+    maxWidth: theme.spacing(43)
   }
 }));
 
@@ -494,8 +500,8 @@ export default function RadioButtonsGroup() {
             <WizardPage pageId={page.pageId} key={`page-${index}`}>
               <Grid container direction='column' alignContent='center' justify='center'>
                 <Grid item>
-                  {page.pageTitle && <Typography variant='h3' color='primary' gutterBottom>{page.pageTitle}</Typography>}
-                  {page.pageDescription && <Typography variant='subtitle2' paragraph>{page.pageDescription}</Typography>}
+                  {page.pageTitle && <Typography variant='h3' color='primary' gutterBottom className={classes.formTitle}>{page.pageTitle}</Typography>}
+                  {page.pageDescription && <Typography variant='subtitle2' paragraph className={classes.formDescription}>{page.pageDescription}</Typography>}
                 </Grid>
                 <Grid item>
                   <WizardSlide>
@@ -542,7 +548,7 @@ export default function RadioButtonsGroup() {
         >
           <WizardButton variant='contained' color='secondary' mode='previous' buttonLabel='Back' />
           <WizardButton variant='contained' color='primary' mode='next' buttonLabel='Next' />
-          <WizardButton variant='contained' color='primary' mode='submit' buttonLabel='Submit' />
+          <WizardButton variant='contained' color='primary' mode='submit' buttonLabel='Generate Roadmap' />
         </Grid>
 
         {/* margin under buttons to prevent them from being clipped by hidden overflow */}

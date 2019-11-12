@@ -13,6 +13,13 @@ import {
   MenuItem
 } from '@material-ui/core';
 import { checked, checkForLinks } from './utils';
+import { makeStyles } from '@material-ui/styles';
+
+const useStyles = makeStyles(theme => ({
+  dropDown: {
+    width: theme.spacing(20)
+  }
+}))
 
 function WizardCheckBox(props) {
   return (
@@ -76,6 +83,8 @@ function WizardText(props) {
 }
 
 function WizardDropDown(props) {
+  const classes = useStyles();
+
   return (
     <React.Fragment>
       {props.questionLabel && <Typography {...props.TypographyProps}>{props.questionLabel}</Typography>}
@@ -84,6 +93,7 @@ function WizardDropDown(props) {
         {...props.TextFieldProps}
         {...props.WizardDropDownProps}
         name={props.name}
+        className={classes.dropDown}
       >
         {props.options.map((option, index) => (
           <MenuItem
