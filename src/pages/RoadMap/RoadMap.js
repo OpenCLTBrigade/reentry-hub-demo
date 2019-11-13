@@ -60,7 +60,7 @@ export default function RadioButtonsGroup() {
             <WizardPage pageId={page.pageId} key={`page-${index}`}>
               <WizardSlide>
                 <Grid container direction='row' alignContent='center' justify='center' spacing={5}>
-                  <Grid item container direction='column' alignContent='center' justify='center' spacing={1} xs={6}>
+                  <Grid item container direction='column' alignContent='center' justify='flex-start' spacing={1} xs={6}>
                     <Grid item>
                       {page.pageTitle && <Typography variant='h3' color='primary' className={classes.formTitle}>{page.pageTitle}</Typography>}
                     </Grid>
