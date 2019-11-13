@@ -32,9 +32,12 @@ export default function RadioButtonsGroup() {
 
   if (redirect) {
     return (
-      <Grid container justify='center' alignItems='center' style={{ marginTop: '2em' }}>
+      <Grid container justify='center' alignItems='center' style={{ marginTop: '2em' }} spacing={1}>
         <Grid item>
-          <Typography variant='h3' color='primary' className={classes.formTitle}>Yay you've finished! <ThumbUpIcon color='primary'/></Typography>
+          <Typography variant='h3' color='primary' className={classes.formTitle}>Yay you've finished!</Typography>
+        </Grid>
+        <Grid item>
+          <ThumbUpIcon fontSize='large' color='primary'/> 
         </Grid>
       </Grid>
     )
@@ -55,12 +58,12 @@ export default function RadioButtonsGroup() {
         <Grid item style={{ width: '100%', marginBottom: '4vh' }}>
           <WizardProgress />
         </Grid>
-        <Grid item>
+        <Grid item style={{ padding: '1em' }}>
           {questionData.map((page, index) => (
             <WizardPage pageId={page.pageId} key={`page-${index}`}>
               <WizardSlide>
                 <Grid container direction='row' alignContent='center' justify='center' spacing={5}>
-                  <Grid item container direction='column' alignContent='center' justify='flex-start' spacing={1} xs={6}>
+                  <Grid item container direction='column' alignContent='center' justify='flex-start' spacing={1} md={6} sm={12}>
                     <Grid item>
                       {page.pageTitle && <Typography variant='h3' color='primary' className={classes.formTitle}>{page.pageTitle}</Typography>}
                     </Grid>
@@ -70,7 +73,7 @@ export default function RadioButtonsGroup() {
                       </Grid>
                     ))}
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item md={6} sm={12}>
                     <Paper elevation={5} className={classes.formPaper}>
                       {page.fields.map((question) => (
                         <WizardField
