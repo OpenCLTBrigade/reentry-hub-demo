@@ -63,7 +63,11 @@ export const questionData = [
   {
     pageId: 3,
     pageTitle: 'Getting Organized',
-    pageDescription: ['Inspriational TEXT HERE'],
+    pageDescription: ["We know this sounds like the worst step, but we know this will help you save time and frustration down the road. We all just want to jump into job and housing searches but we urge you to trust us on this one. Being organized now will help when doors start opening for you. You can do this and we’re here to help.",
+    "Most of us need help getting organized. Many returning residents tell us that it’s hard to ask for help. Please don’t be afraid or embarrassed to ask for any help you may need. It’s impossible to list every resource in Charlotte, but we’ve tried to include some of the more well-known and well-established places. So, you may need to do a little research on your own:",
+    "- Ask your parole officer and/or a community re-entry specialist if s/he knows of specific places to get help.",
+    "- Call 3-1-1, and be connected to a database of health and social service resources available to you through the Department of Child and Family Services.",
+    "- If you go to a community organization, ask if they know about other places in the community where you might find help. Many offer specialized services but work in partnership with each other."],
     fields: [
       {
         label: 'Do you have a government-issued ID?',
@@ -152,8 +156,25 @@ export const questionData = [
   {
     pageId: 4,
     pageTitle: 'Getting an ID',
-    pageDescription: ['As you probably know, having an government-issued ID is vital to life and accessing resources.  To minimize necessary time at the DMV let’s make sure you know what you need and how to get an ID or license. <br/><br/> ADD INFO FROM DMV SITE'],
+    pageDescription: ["As you probably know, having an government-issued ID is vital to life and accessing resources. To minimize necessary time at the DMV let’s make sure you know what you need and how to get an ID or license.",
+    "Qualifying for an ID requires you to to be able to prove two things: Proof of Identity and Proof of Residence. Let’s look at each of them.",
+    "You can prove your Identity with any of the following documents:",
+    "- A certified birth certificate may serve as proof of date of birth and full name.",
+    "- Prison release photo ID or official release document may serve as proof of identity.",
+    "- Original or photo copy of the Social Security Card or W2 of a work release initiative may serve as proof of SSN.",
+    "- A printout of the Department of Correction Official Release Document may serve as proof of the residence address if the offender has been released from prison.",
+    "- Expired NC driver license or identification card (if applicable) may serve as proof of full name, DOB and residence address.",
+    "Official documents such as forms of identification, Social Security cards, Driver’s License, Prison I.D, Birth Certificates, official release document should be included in the Transition Document Envelope (TDE). The envelope (TDE) and documents enclosed will be crucial in the transition and reentry process."],
     fields: [
+      {
+        label: 'Which is superior?',
+        name: 'color',
+        fieldType: 'checkbox',
+        options: [
+          'Unicorn',
+          'Pegasus',
+        ]
+      }
     ]
   },
 
@@ -329,7 +350,10 @@ export const questionData = [
   {
     pageId: 11,
     pageTitle: 'Getting Substance Abuse Treatment',
-    pageDescription: ['INSERT INSPIRATIONAL INFO HERE'],
+    pageDescription: ["INSERT INSPIRATIONAL INFO HERE",
+    "Helpful Reminders:",
+    "- The location of your treatment is vital to your success. It is much harder to stay with a program that is difficult to access or isn’t convenient.",
+    "- If you are on papers, you’ll need to use an approved treatment provider. Check with your case worker to make sure your provider is approved."],
     fields: [
       {
         label: 'Which is superior?',
