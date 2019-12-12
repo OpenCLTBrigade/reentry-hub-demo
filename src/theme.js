@@ -14,7 +14,13 @@ let theme = createMuiTheme({
       light: blue[300]
     }
   },
-  overrides: {}
+  overrides: {
+    MuiStepper: {
+      root: {
+        backgroundColor: '#f5f5f5'
+      }
+    }
+  }
 })
 
 theme = responsiveFontSizes(theme);
